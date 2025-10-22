@@ -45,21 +45,55 @@
 
     <?php
        $books = [
-        "Do Androids Dream of Electric Sheep"
-        ,"The Longoliers"
-        ,"Hail Mary"
-        ,"Animal Farm"
+        // "Do Androids Dream of Electric Sheep"
+        // ,"The Longoliers"
+        // ,"Hail Mary"
+        // ,"Animal Farm"
+        [
+            'name' => 'Do Androids Dream of Electric Sheep',
+            'author' => 'Philip K. Dick',
+            'url' => 'http://example.com',
+        ],
+         [
+            'name' => 'The Longoliers',
+            'author' => 'Stephen King',
+            'url' => 'http://example.com',
+         ],
+          [
+            'name' => 'Hail Mary',
+            'author' => 'Andy Weir',
+            'url' => 'http://example.com',
+          ],
+           [
+            'name' => 'Animal Farm',
+            'author' => 'George Orwell',
+            'url' => 'http://example.com',
+        ]
        ];
     ?>
 
-    <ul>
-        <!-- <?php foreach ($books as $book){
+    <!-- <ul>
+        <?php foreach ($books as $book){
             echo "<li>{$book}™</li>";
         }
-        ?> -->
+        ?>
 
         <?php foreach ($books as $book) : ?>
             <li><?= $book ?></li>
+        <?php endforeach; ?>
+    </ul> -->
+
+    <!-- <p>
+       <?= $books[2] ?>
+    </p> -->
+
+    <ul>
+        <?php foreach ($books as $book) : ?>
+            <li>
+                <a href="<?= $book['url'] ?>">
+                    <?= $book['name']; ?>
+                </a>
+            </li>
         <?php endforeach; ?>
     </ul>
 
