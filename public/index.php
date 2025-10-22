@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        /* body{
             display: grid;
             place-items: center;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -23,7 +23,7 @@
         ?>
     </h1> -->
 
-    <?php
+    <!-- <?php
       $name = "Dark Matter";
       $read = false;
 
@@ -33,12 +33,35 @@
         $message = "You have not read \"$name.\"";
       }
     ?>
-   
-    <h1>
-      <!-- <?php
+    -->
+    <!-- <h1>
+      <?php
         echo $message;
-      ?> -->
+      ?>
       <?= $message ?>
-    </h1>
+    </h1> -->
+
+    <h1> Recommended Books</h1>
+
+    <?php
+       $books = [
+        "Do Androids Dream of Electric Sheep"
+        ,"The Longoliers"
+        ,"Hail Mary"
+        ,"Animal Farm"
+       ];
+    ?>
+
+    <ul>
+        <!-- <?php foreach ($books as $book){
+            echo "<li>{$book}™</li>";
+        }
+        ?> -->
+
+        <?php foreach ($books as $book) : ?>
+            <li><?= $book ?></li>
+        <?php endforeach; ?>
+    </ul>
+
 </body>
 </html>
