@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* body{
+    /* body{
             display: grid;
             place-items: center;
             height: 100vh;
@@ -14,6 +15,7 @@
         } */
     </style>
 </head>
+
 <body>
     <!-- <h1>
         <?php
@@ -70,6 +72,19 @@
             'url' => 'http://example.com',
         ]
        ];
+
+       function filterByAuthor($books , $author) {
+          $filteredBooks = [];
+          
+          foreach ($books as $book) {
+            if ($book['author'] === $author) {
+              $filteredBooks[] = $book;
+            }
+          } 
+
+          return $filteredBooks;
+       }
+       
     ?>
 
     <!-- <ul>
@@ -88,14 +103,30 @@
     </p> -->
 
     <ul>
-        <?php foreach ($books as $book) : ?>
-            <li>
-                <a href="<?= $book['url'] ?>">
-                    <?= $book['name']; ?>
-                </a>
-            </li>
+        <?php foreach (filterByAuthor($books, 'Andy Weir') as $book) : ?>
+        <?php if ($book['author'] === 'Andy Weir') : ?>
+        <li>
+            <a href="<?= $book['url'] ?>">
+                <strong>
+                    <?= $book['name']; ?> (Author: <?= $book['author']; ?>)
+                </strong>
+            </a>
+        </li>
+        <?php endif; ?>
+
+        <!-- <li>
+            <a href="<?= $book['url'] ?>">
+                <?= $book['name']; ?>
+            </a>
+        </li> -->
         <?php endforeach; ?>
     </ul>
 
+    <!-- <p>
+        <?= filterByAuthor($books, 'Andy Weir') ?>
+
+    </p> -->
+
 </body>
+
 </html>
