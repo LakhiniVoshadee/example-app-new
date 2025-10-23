@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-use Laravel\Fortify\Features;
 
 Route::get('/', function () {
-    return view('home');
+    return view('home',[
+        'greeting' => 'Welcome to our website!',
+        'name'=> 'Lakhini Voshadee',
+    ]);
 });
 
 
