@@ -1,59 +1,20 @@
 <?php
-       $books = [
-        // "Do Androids Dream of Electric Sheep"
-        // ,"The Longoliers"
-        // ,"Hail Mary"
-        // ,"Animal Farm"
-        [
-            'name' => 'Do Androids Dream of Electric Sheep',
-            'author' => 'Philip K. Dick',
-            'url' => 'http://example.com',
-        ],
-         [
-            'name' => 'The Longoliers',
-            'author' => 'Stephen King',
-            'url' => 'http://example.com',
-         ],
-          [
-            'name' => 'Hail Mary',
-            'author' => 'Andy Weir',
-            'url' => 'http://example.com',
-          ],
-           [
-            'name' => 'Animal Farm',
-            'author' => 'George Orwell',
-            'url' => 'http://example.com',
-        ]
-       ];
 
-    //  function filter($items , $fn) {
-    //       $filteredItems = [];
-          
-    //       foreach ($items as $item) {
-    //         if ($fn($item)) {
-    //           $filteredItems[] = $item;
-    //         }
-    //       } 
+use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
 
-    //       return $filteredItems;
-    //    };
+define('LARAVEL_START', microtime(true));
 
-       $filteredBooks = array_filter($books , function($book){
-        return $book['name'] === 'Hail Mary';
-        
-       });
+// Determine if the application is in maintenance mode...
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
+}
 
-      require 'index.view.php'; 
-    //    function filterByYear($books , $year) {
-    //       $filteredBooks = [];
-          
-    //       foreach ($books as $book) {
-    //         if ($book['releaseYear'] === $year) {
-    //           $filteredBooks[] = $book;
-    //         }
-    //       } 
+// Register the Composer autoloader...
+require __DIR__.'/../vendor/autoload.php';
 
-    //       return $filteredBooks;
-    //    }
-       
-    ?>
+// Bootstrap Laravel and handle the request...
+/** @var Application $app */
+$app = require_once __DIR__.'/../bootstrap/app.php';
+
+$app->handleRequest(Request::capture());
