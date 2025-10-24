@@ -32,7 +32,7 @@
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
+                <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
                 <x-nav-link href="/contact" :active="request()->is('contact')" type="button">Contact</x-nav-link>
             </div>
             <div class=" hidden lg:flex lg:flex-1 lg:justify-end">
@@ -66,8 +66,8 @@
                                 <div class="space-y-2 py-6">
                                     <a href="/"
                                         class="-mx-3 block rounded-xl px-3 py-2 text-base font-medium text-gray-300 hover:bg-indigo-500/10 transition-colors duration-200">Home</a>
-                                    <a href="/about"
-                                        class="-mx-3 block rounded-xl px-3 py-2 text-base font-medium text-gray-300 hover:bg-indigo-500/10 transition-colors duration-200">About</a>
+                                    <a href="/jobs"
+                                        class="-mx-3 block rounded-xl px-3 py-2 text-base font-medium text-gray-300 hover:bg-indigo-500/10 transition-colors duration-200">Jobs</a>
                                     <a href="/contact"
                                         class="-mx-3 block rounded-xl px-3 py-2 text-base font-medium text-gray-300 hover:bg-indigo-500/10 transition-colors duration-200">Contact</a>
                                 </div>
